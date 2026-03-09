@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36930.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moalimi.Domain", "Moalimi.Domain\Moalimi.Domain.csproj", "{48F5D058-C6D1-4DEF-8FE8-06DEE3381686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moalimi.Application", "Moalimi.Application\Moalimi.Application.csproj", "{41442B84-8CC1-4B5F-B54D-DD994D46DC94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moalimi.Infrastructure", "Moalimi.Infrastructure\Moalimi.Infrastructure.csproj", "{81E0703A-3A91-4FB8-8254-34DB28892BAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moalimi.API", "Moalimi.API\Moalimi.API.csproj", "{93522CCB-7F61-418B-AF1D-84941971ADBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48F5D058-C6D1-4DEF-8FE8-06DEE3381686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F5D058-C6D1-4DEF-8FE8-06DEE3381686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F5D058-C6D1-4DEF-8FE8-06DEE3381686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F5D058-C6D1-4DEF-8FE8-06DEE3381686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41442B84-8CC1-4B5F-B54D-DD994D46DC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41442B84-8CC1-4B5F-B54D-DD994D46DC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41442B84-8CC1-4B5F-B54D-DD994D46DC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41442B84-8CC1-4B5F-B54D-DD994D46DC94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E0703A-3A91-4FB8-8254-34DB28892BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E0703A-3A91-4FB8-8254-34DB28892BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E0703A-3A91-4FB8-8254-34DB28892BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E0703A-3A91-4FB8-8254-34DB28892BAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93522CCB-7F61-418B-AF1D-84941971ADBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93522CCB-7F61-418B-AF1D-84941971ADBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93522CCB-7F61-418B-AF1D-84941971ADBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93522CCB-7F61-418B-AF1D-84941971ADBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BC13168-AF17-437F-8B64-0BCFF4CC0C62}
+	EndGlobalSection
+EndGlobal
