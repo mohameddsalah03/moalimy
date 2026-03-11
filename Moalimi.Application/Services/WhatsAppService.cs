@@ -61,39 +61,39 @@ public class WhatsAppService : IWhatsAppService
     public Task<WhatsAppResponse> SendPaymentConfirmationAsync(
         SendPaymentConfirmationRequest req, CancellationToken ct = default) =>
         SendMessageAsync(new SendMessageRequest(req.PhoneNumber, $"""
-✅ *تم تأكيد دفعتك!*
+ *تم تأكيد دفعتك!*
 
 مرحباً {req.UserName}،
-💰 المبلغ: {req.Amount:F2} ج.م
-🆔 رقم المعاملة: {req.TransactionId}
-🕐 {DateTime.Now:dd/MM/yyyy HH:mm}
+ المبلغ: {req.Amount:F2} ج.م
+ رقم المعاملة: {req.TransactionId}
+ {DateTime.Now:dd/MM/yyyy HH:mm}
 
-شكراً لاختيارك منصة حصتك 🎓
+شكراً لاختيارك منصة حصتك 
 """), ct);
 
     public Task<WhatsAppResponse> SendSessionReminderAsync(
         SendSessionReminderRequest req, CancellationToken ct = default) =>
         SendMessageAsync(new SendMessageRequest(req.PhoneNumber, $"""
-⏰ *تذكير بموعد حصتك!*
+ *تذكير بموعد حصتك!*
 
 مرحباً {req.StudentName}،
 حصتك مع *{req.TeacherName}*:
-📅 {req.SessionTime:dd/MM/yyyy}  🕐 {req.SessionTime:HH:mm}
+ {req.SessionTime:dd/MM/yyyy}   {req.SessionTime:HH:mm}
 
-احرص على الانضمام في الوقت ✨
+احرص على الانضمام في الوقت 
 """), ct);
 
     public Task<WhatsAppResponse> SendGiftNotificationAsync(
         SendGiftRequest req, CancellationToken ct = default) =>
         SendMessageAsync(new SendMessageRequest(req.RecipientPhone, $"""
-🎁 *لديك هدية تعليمية من حصتك!*
+ *لديك هدية تعليمية من حصتك!*
 
 أهداك *{req.SenderName}* باقة:
-📚 *{req.PackageName}*
+ *{req.PackageName}*
 
 كود الهدية: 🔑 *{req.GiftCode}*
 
-فعّل اشتراكك على 🌐 www.hissatak.online
+فعّل اشتراكك على  www.hissatak.online
 """), ct);
 
     // ── Private ──

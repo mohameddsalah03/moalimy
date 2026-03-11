@@ -12,7 +12,6 @@ public class PaymentController : ControllerBase
 
     public PaymentController(IVodafoneCashService service) => _service = service;
 
-    /// <summary>الخطوة 1 — ابدأ الدفع</summary>
     [HttpPost("initiate")]
     public async Task<IActionResult> Initiate(
         [FromBody] InitiatePaymentRequest req, CancellationToken ct)
@@ -21,7 +20,6 @@ public class PaymentController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>الخطوة 2 — تأكيد OTP | Sandbox: أي OTP غير "000000" ينجح</summary>
     [HttpPost("verify-otp")]
     public async Task<IActionResult> VerifyOtp(
         [FromBody] VerifyOtpRequest req, CancellationToken ct)

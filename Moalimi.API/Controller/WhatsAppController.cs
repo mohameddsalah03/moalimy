@@ -12,7 +12,6 @@ public class WhatsAppController : ControllerBase
 
     public WhatsAppController(IWhatsAppService service) => _service = service;
 
-    /// <summary>رسالة نصية حرة</summary>
     [HttpPost("send")]
     public async Task<IActionResult> Send(
         [FromBody] SendMessageRequest req, CancellationToken ct)
@@ -21,7 +20,6 @@ public class WhatsAppController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>تأكيد دفع</summary>
     [HttpPost("payment-confirmation")]
     public async Task<IActionResult> PaymentConfirmation(
         [FromBody] SendPaymentConfirmationRequest req, CancellationToken ct)
@@ -30,7 +28,6 @@ public class WhatsAppController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>تذكير بموعد حصة</summary>
     [HttpPost("session-reminder")]
     public async Task<IActionResult> SessionReminder(
         [FromBody] SendSessionReminderRequest req, CancellationToken ct)
@@ -39,7 +36,6 @@ public class WhatsAppController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>إشعار هدية تعليمية</summary>
     [HttpPost("gift")]
     public async Task<IActionResult> Gift(
         [FromBody] SendGiftRequest req, CancellationToken ct)
