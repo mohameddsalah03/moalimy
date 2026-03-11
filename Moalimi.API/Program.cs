@@ -1,3 +1,6 @@
+using Moalimi.Infrastructure.Data;
+using Moalimi.Application;
+using Moalimi.Infrastructure;
 
 namespace Moalimi.API
 {
@@ -10,11 +13,31 @@ namespace Moalimi.API
             // Add services to the container.
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddApplication();
+            builder.Services.AddInfrastructure(builder.Configuration);
+
+            builder.Services.AddCors(options =>
+                    options.AddPolicy("AllowFrontend", policy =>
+                        policy
+                            .WithOrigins(
+                                "http://localhost:3000",
+                                "https://www.hissatak.online",
+                                "https://hissatak.online"
+                            )
+                            .AllowAnyMethod()
+                            .AllowAnyHeader())
+                    );
 
             var app = builder.Build();
+            
+            //
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                db.Database.EnsureCreated();
+            }
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -22,9 +45,12 @@ namespace Moalimi.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.UseCors("AllowFrontend");
+
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
